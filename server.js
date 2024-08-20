@@ -9,14 +9,14 @@ const cors = require('cors');
 dotenv.config();
 
 const app = express();
-
+app.use(cors());
 app.use(express.json()); // For parsing application/json
 
 // Routes
 app.use('/api/patients', patientRoutes);
 app.use('/api/doctors', doctorRoutes);
 app.use('/api/appointments', appointmentRoutes);
-app.use(cors());
+
 
 const PORT = 4001;
 
